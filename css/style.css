@@ -85,7 +85,7 @@ main {
 }
 
 .container {
-  width: clamp(320px, 75vw, 1200px);
+  width: clamp(300px, 70vw, 1200px);
   margin-inline: auto;
 }
 
@@ -136,6 +136,15 @@ _main.scss
 .grid-item {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+}
+.grid-item:hover {
+  -webkit-filter: grayscale(20%);
+          filter: grayscale(20%);
 }
 .grid-item img {
   -o-object-fit: cover;
@@ -147,6 +156,9 @@ figcaption {
   display: none;
 }
 
+/********************
+_modal.scss
+********************/
 .modal {
   position: absolute;
   top: 50%;
@@ -165,7 +177,7 @@ figcaption {
 }
 
 .modal-content {
-  width: clamp(350px, 60vw, 600px);
+  width: clamp(360px, 60vw, 600px);
 }
 .modal-content p {
   text-align: center;
@@ -209,13 +221,13 @@ span.asterlisk::before {
 }
 
 span.fsz--sm {
-  font-size: 0.8em;
+  font-size: var(--s-1);
 }
 span.fsz--lg {
-  font-size: 1.2em;
+  font-size: var(--s1);
 }
 span.fsz--xl {
-  font-size: 1.5em;
+  font-size: var(--s2);
 }
 
 span.fw--b {

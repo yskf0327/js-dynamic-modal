@@ -1,0 +1,26 @@
+/********************
+_modal.scss
+********************/
+
+@use "../setting/shadows" as s;
+@use "../setting/colors" as c;
+@use "../setting/mediaquery" as mq;
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: c.$white;
+	&::backdrop {
+		background-color: c.$clr__modal--bg;
+	}
+	transition: all 0.3s ease-in-out;
+}
+
+.modal-content {
+	width: clamp(360px, 60vw, 600px);
+	p {
+		text-align: center;
+	}
+}
