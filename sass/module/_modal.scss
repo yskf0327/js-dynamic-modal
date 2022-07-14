@@ -15,7 +15,6 @@ _modal.scss
 	&::backdrop {
 		background-color: c.$clr__modal--bg;
 	}
-	transition: all 0.3s ease-in-out;
 }
 
 .modal-content {
