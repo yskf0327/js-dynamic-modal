@@ -1,0 +1,58 @@
+/********************
+_util.scss
+********************/
+@use "../setting/colors" as c;
+@use "../setting/mediaquery" as mq;
+
+span.no-wrap {
+	display: inline-block;
+}
+
+span.asterlisk {
+	font-size: 0.9rem;
+
+	&::before {
+		content: "*";
+	}
+}
+
+span.fsz {
+	&--sm {
+		font-size: var(--s-1);
+	}
+
+	&--lg {
+		font-size: var(--s1);
+	}
+
+	&--xl {
+		font-size: var(--s2);
+	}
+}
+
+span.fw {
+	&--b {
+		font-weight: bold;
+	}
+}
+
+a.link:hover {
+	text-decoration: underline;
+}
+
+.ta_c {
+	text-align: center;
+}
+
+.ta_l {
+	text-align: left;
+}
+
+.ta_r {
+	text-align: right;
+}
+
+.inline-list > li {
+	display: inline-block;
+	text-indent: var(--s0);
+}

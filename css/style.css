@@ -1,0 +1,244 @@
+/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
+/* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/********************
+_base.scss
+********************/
+:root {
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --footer-height: 80px;
+  font-size: calc(1rem + 0.2vw);
+}
+
+html {
+  color: #333333;
+  overflow-x: hidden;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  word-break: keep-all;
+}
+
+body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  min-height: 100vh;
+}
+body.show-modal {
+  height: 100vh;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container {
+  width: clamp(320px, 75vw, 1200px);
+  margin-inline: auto;
+}
+
+.center {
+  max-width: 45rem;
+  margin-inline: auto;
+}
+
+p {
+  line-height: 1.8;
+}
+
+a {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/********************
+_titles.scss
+********************/
+.title-style01 {
+  font-family: "Rammetto One", cursive;
+  font-size: var(--s3);
+  -webkit-margin-after: var(--s2);
+          margin-block-end: var(--s2);
+  color: #ED7978;
+  text-align: center;
+}
+
+/********************
+_shadows.scss
+********************/
+/********************
+_main.scss
+********************/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--s1);
+  -webkit-margin-after: var(--s2);
+          margin-block-end: var(--s2);
+}
+
+.grid-item {
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.grid-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+figcaption {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.modal::-webkit-backdrop {
+  background-color: rgba(29, 29, 33, 0.5);
+}
+.modal::backdrop {
+  background-color: rgba(29, 29, 33, 0.5);
+}
+
+.modal-content {
+  width: clamp(350px, 60vw, 600px);
+}
+.modal-content p {
+  text-align: center;
+}
+
+/********************
+_footer.scss
+********************/
+.footer {
+  background-color: #ED7978;
+  text-align: center;
+  height: var(--footer-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.footer small {
+  text-align: center;
+  color: #ffffff;
+}
+
+/********************
+_util.scss
+********************/
+span.no-wrap {
+  display: inline-block;
+}
+
+span.asterlisk {
+  font-size: 0.9rem;
+}
+span.asterlisk::before {
+  content: "*";
+}
+
+span.fsz--sm {
+  font-size: 0.8em;
+}
+span.fsz--lg {
+  font-size: 1.2em;
+}
+span.fsz--xl {
+  font-size: 1.5em;
+}
+
+span.fw--b {
+  font-weight: bold;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+.ta_c {
+  text-align: center;
+}
+
+.ta_l {
+  text-align: left;
+}
+
+.ta_r {
+  text-align: right;
+}
+
+.inline-list > li {
+  display: inline-block;
+  text-indent: var(--s0);
+}/*# sourceMappingURL=style.css.map */

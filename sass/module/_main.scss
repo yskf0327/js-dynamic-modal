@@ -1,0 +1,44 @@
+/********************
+_main.scss
+********************/
+@use "../setting/shadows" as s;
+@use "../setting/colors" as c;
+@use "../setting/mediaquery" as mq;
+
+.grid-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+	gap: var(--s1);
+	margin-block-end: var(--s2);
+}
+
+.grid-item{
+	@include s.shadow-4dp;
+	img{
+		object-fit: cover;
+		aspect-ratio: 4/3;
+	}
+}
+
+figcaption{
+	display: none;
+}
+
+.modal{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: c.$white;
+	&::backdrop{
+		background-color: c.$clr__modal--bg;
+	}
+	transition: all 0.3s ease-in-out;
+}
+
+.modal-content{
+	width: clamp(350px,60vw,600px);
+	p{
+		text-align: center;
+	}
+}

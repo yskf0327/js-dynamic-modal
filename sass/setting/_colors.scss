@@ -1,0 +1,32 @@
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+$clr__primaly:#ED7978;
+$clr__primaly--l:tint($clr__primaly,30%);
+$clr__primaly--d:shade($clr__primaly,30%);
+$clr__primaly--bg:rgba($clr__primaly,0.2);
+
+$clr__secondary:#F2E2CE;
+$clr__secondary--l:tint($clr__secondary,30%);
+$clr__secondary--d:shade($clr__secondary,30%);
+$clr__secondary--bg:rgba($clr__secondary,0.2);
+
+$clr__accent:#F2AC57;
+$clr__accent--l:tint($clr__accent,30%);
+$clr__accent--d:shade($clr__accent,30%);
+$clr__accent--bg:rgba($clr__accent,0.2);
+
+$text: #333333;
+$text--l:tint($text,30%);
+$text--d:shade($text,10%);
+
+$black: #1d1d21;
+$grey: #cecece;
+$white: #ffffff;
+
+$clr__modal--bg:rgba($black,0.5);

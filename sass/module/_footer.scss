@@ -1,0 +1,19 @@
+/********************
+_footer.scss
+********************/
+@use "../setting/shadows" as s;
+@use "../setting/colors" as c;
+@use "../setting/mediaquery" as mq;
+
+.footer{
+	background-color: c.$clr__primaly;
+	text-align: center;
+	height: var(--footer-height);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	small{
+		text-align: center;
+		color: c.$white;
+	}
+}

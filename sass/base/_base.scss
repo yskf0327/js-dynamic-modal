@@ -1,0 +1,76 @@
+@charset 'utf-8';
+
+/********************
+_base.scss
+********************/
+
+@use "../setting/mediaquery" as mq;
+@use "../setting/colors" as c;
+
+:root {
+	--ratio: 1.5;
+	--s-5: calc(var(--s-4) / var(--ratio));
+	--s-4: calc(var(--s-3) / var(--ratio));
+	--s-3: calc(var(--s-2) / var(--ratio));
+	--s-2: calc(var(--s-1) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+	--s0: 1rem;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s1) * var(--ratio));
+	--s3: calc(var(--s2) * var(--ratio));
+	--s4: calc(var(--s3) * var(--ratio));
+	--s5: calc(var(--s4) * var(--ratio));
+	--radius-sm: 10px;
+	--radius-md: 20px;
+	--radius-lg: 30px;
+	--footer-height: 80px;
+
+	font-size: calc(1rem + 0.2vw);
+}
+
+html {
+	color: c.$text;
+	overflow-x: hidden;
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+		"Hiragino Sans", Meiryo, sans-serif;
+	word-break: keep-all;
+}
+
+body {
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	min-height: 100vh;
+
+	&.show-modal{
+		// overflow-y: hidden;
+		height: 100vh;
+	}
+}
+
+main{
+	flex: 1;
+}
+
+.container {
+	width: clamp(320px, 75vw, 1200px);
+	margin-inline: auto;
+}
+
+.center {
+	max-width: 45rem;
+	margin-inline: auto;
+}
+
+p {
+	line-height: 1.8;
+}
+
+a {
+	cursor: pointer;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
