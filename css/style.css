@@ -127,10 +127,10 @@ _shadows.scss
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   transition: filter 0.3s ease-out;
   cursor: pointer;
-  filter: sepia(70%);
+  filter: brightness(80%);
 }
 .grid-item:hover {
-  filter: sepia(0);
+  filter: brightness(100%);
 }
 .grid-item img {
   object-fit: cover;
@@ -155,11 +155,24 @@ _modal.scss
 .modal::backdrop {
   background-color: rgba(29, 29, 33, 0.5);
 }
+.modal[open] {
+  animation-name: fadein;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
 
 .modal-content p {
   text-align: center;
 }
 
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /********************
 _footer.scss
 ********************/

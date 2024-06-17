@@ -16,9 +16,9 @@ _main.scss
 	@include s.shadow-4dp;
 	transition: filter 0.3s ease-out;
 	cursor: pointer;
-	filter:sepia(70%);
+	filter:brightness(80%);
 	&:hover {
-		filter: sepia(0);
+		filter: brightness(100%);
 	}
 	img {
 		object-fit: cover;
