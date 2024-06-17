@@ -14,11 +14,11 @@ _main.scss
 
 .grid-item {
 	@include s.shadow-4dp;
-	transition: all 0.3s ease-out;
+	transition: filter 0.3s ease-out;
 	cursor: pointer;
-	filter:grayscale(50%);
+	filter:sepia(70%);
 	&:hover {
-		filter: grayscale(20%);
+		filter: sepia(0);
 	}
 	img {
 		object-fit: cover;

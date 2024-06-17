@@ -125,12 +125,12 @@ _shadows.scss
 
 .grid-item {
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-out;
+  transition: filter 0.3s ease-out;
   cursor: pointer;
-  filter: grayscale(50%);
+  filter: sepia(70%);
 }
 .grid-item:hover {
-  filter: grayscale(20%);
+  filter: sepia(0);
 }
 .grid-item img {
   object-fit: cover;
