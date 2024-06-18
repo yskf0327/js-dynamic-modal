@@ -10,7 +10,7 @@ puppyArray.forEach(puppy => {
 
 	const gridInner = document.createElement('a');
 	gridInner.setAttribute('href', '#');
-	gridInner.setAttribute('data-msg', puppy.msg);
+	// gridInner.setAttribute('data-msg', puppy.msg);
 
 	const gridImg = document.createElement('img');
 	gridImg.setAttribute('src', 'img/' + puppy.image);

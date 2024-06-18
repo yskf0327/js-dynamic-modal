@@ -21,7 +21,7 @@ _modal.scss
 	&[open] {
 		animation-name: fadein;
 		animation-duration: 0.5s;
-		animation-timing-function: ease-out;
+		animation-timing-function: ease-in-out;
 	}
 }
 
