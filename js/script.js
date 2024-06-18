@@ -39,3 +39,27 @@ puppyArray.forEach(puppy => {
 		}
 	})
 });
+
+// loading
+window.addEventListener('load', () => {
+	const loadingScreen = document.querySelector('.l-loading');
+	const fadeOut = [
+		{
+			opacity: 1
+		},
+		{
+			opacity: 0
+		}
+	];
+	const fadeOutTiming = {
+		duration: 300,
+		easing: 'linear',
+		fill: 'forwards'
+	}
+	setTimeout(() => {
+		setTimeout(() => {
+			loadingScreen.style.zIndex = -1;
+		}, 1000);
+		loadingScreen.animate(fadeOut, fadeOutTiming);
+	}, 2000);
+});
